@@ -1,0 +1,224 @@
+:root {
+    --color-primary: #0B67F9;
+    --color-white: #FFF;
+    --color-is-invalid: #dc3545;
+  }
+
+html {
+    font-size: 100%;
+
+    font-weight: 400;
+    font-style: normal;
+
+    font-family: 'Roboto', sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-base);
+}
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+}
+
+
+
+.page-content {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: auto;
+}
+.col-el {
+    width: 100%;
+}
+.col-el-half {
+    width: 45%;
+}
+
+
+
+.md-field {
+    display: block;
+    position: relative;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+.md-input::placeholder {
+    color: transparent !important;
+    user-select: none !important;
+}
+  
+
+
+/* Standard Thema */
+
+.md-field--standard .md-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    transform-origin: 0 0;
+    transform: translate3d(0px, 5px, 0);
+    font-size: 0.875rem;
+    line-height: 20px;
+    transition: transform .2s;
+    cursor: text;
+}
+
+.md-field--standard .md-input {
+    appearance: none;
+    width: 100%;
+    padding: 0;
+    padding-left: 3px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #DDD;
+    outline: none;  
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.md-field--standard .md-input:focus {
+    border-bottom: 1px solid var(--color-primary);
+}
+.md-field--standard .md-input:focus + .md-label,
+.md-field--standard .md-input:not(:placeholder-shown) + .md-label {
+    transform: translate3d(3px, -15px, 0) scale(0.875);
+    color: var(--color-primary);
+}
+
+.md-field--standard .md-input.is-invalid:focus + .md-label,
+.md-field--standard .md-input.is-invalid:not(:placeholder-shown) + .md-label {
+    color: var(--color-is-invalid);
+}
+.md-field--standard .md-input.is-invalid:focus {
+    border-bottom: 1px solid var(--color-is-invalid);
+}
+
+
+
+/* Outline Thema */
+
+.md-field--outline .md-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 2px 5px;
+    background-color: var(--color-white);
+    transform-origin: 0 0;
+    transform: translate3d(0.8rem, 1rem, 0);
+    font-size: 0.875rem;
+    transition: transform .2s;
+    cursor: text;
+}
+.md-field--outline .md-input {
+    appearance: none;
+    width: 100%;
+    background-color: transparent;
+    outline: none;  
+    font-size: 1rem;
+
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.md-field--outline .md-input:focus + .md-label,
+.md-field--outline .md-input:not(:placeholder-shown) + .md-label {
+    transform: translate3d(0.8rem, -0.5rem, 0) scale(0.875);
+    color: var(--color-primary);
+}
+
+.md-field--outline .md-input.is-invalid:focus + .md-label,
+.md-field--outline .md-input.is-invalid:not(:placeholder-shown) + .md-label {
+    color: var(--color-is-invalid);
+}
+
+
+
+/* Inner Thema */
+
+.md-field--inner .md-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    transform-origin: 0 0;
+    font-size: 0.875rem;
+    transition: transform .2s;
+    cursor: text;
+    pointer-events: none;
+
+    top: 2px;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    padding: 1rem .75rem;
+    border: 1px solid transparent;
+}
+.md-field--inner .md-input {
+    appearance: none;
+    width: 100%;
+    background-color: transparent;
+    outline: none;  
+    font-size: 1rem;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 1rem .75rem;
+}
+
+.md-field--inner .md-input:focus,
+.md-field--inner .md-input:not(:placeholder-shown) {
+    padding-top: 1.5rem;
+    padding-bottom: .5rem;
+}
+.md-field--inner .md-input:focus + .md-label,
+.md-field--inner .md-input:not(:placeholder-shown) + .md-label {
+    transform: translate3d(0.1rem, -0.5rem, 0) scale(0.875);
+    color: grey;
+}
+
+
+
+
+/* Field is Invalid */
+
+.md-input.is-invalid {
+    border-color: var(--color-is-invalid);
+    padding-right: calc(1.5em + .75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+
+/* Small devices (landscape phones, less than 781px) */
+@media screen and (max-width: 781px) { 
+
+.col-el-half {
+    width: 100%;
+}
+    
+}
+
