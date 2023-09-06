@@ -90,11 +90,13 @@ body {
     cursor: pointer;
  }
 
-.status-loading-spinner {
+
+
+.ui-btn-with-state {
     position: relative; 
     display: inline-block;
-} 
-.status-loading-spinner:after {
+}
+.ui-btn-with-state.state-style--spinner.state-visibility--multiple .ui-btn-with-state__state {
     content: '';
     position: absolute; 
     right: 9px; 
@@ -108,9 +110,9 @@ body {
     border-radius: 50%;
     animation: 0.75s linear infinite loading-spinner;
     opacity: 0.7;
-} 
+}
 
-.status-loading-spinner-single {
+.ui-btn-with-state.state-style--spinner.state-visibility--single .ui-btn-with-state__state  {
     position: absolute;
     left: 0;
     right: 0;
@@ -118,8 +120,8 @@ body {
     bottom: 0;
     margin: auto;
     display: inline-block;
-    width: 0.87rem;
-    height: 0.87rem;
+    width: 1.25rem;
+    height: 1.25rem;
     line-height: 100%;
     border: 2px solid currentcolor;
     border-right-color: transparent;
@@ -127,14 +129,66 @@ body {
     animation: 0.75s linear infinite loading-spinner;
     opacity: 0.7;
 }
+.ui-btn-with-state.state-style--spinner.state-visibility--single .ui-btn-with-state__content {
+    visibility: hidden;
+}
+
+.ui-btn-with-state.state-style--pulsar.state-visibility--multiple .ui-btn-with-state__state {
+    content: '';
+    position: absolute; 
+    right: 9px; 
+    top: 0; 
+    bottom: 0; 
+    margin: auto 0;
+    width: 0.87rem;
+    height: 0.87rem;
+    background-color: currentcolor;
+    border-radius: 50%;
+    animation: 0.95s linear infinite loading-pulsar;
+}
+
+.ui-btn-with-state.state-style--pulsar.state-visibility--single .ui-btn-with-state__state  {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 100%;
+    border-radius: 50%;
+    background-color: currentcolor;
+    animation: 0.95s linear infinite loading-pulsar;
+}
+.ui-btn-with-state.state-style--pulsar.state-visibility--single .ui-btn-with-state__content {
+    visibility: hidden;
+}
+
+
 @keyframes loading-spinner {
     to { transform: rotate(360deg) 
     }
 }
 
-.ui-btn-content {
-    visibility: hidden;
+@keyframes loading-pulsar {
+    0% {
+        opacity: 0.25;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: none;
+    }
+    100% {
+        opacity: 0;
+        transform: none;
+    }
 }
+
+
+
 
 .md-field {
     display: block;
