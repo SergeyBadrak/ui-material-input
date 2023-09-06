@@ -59,10 +59,11 @@ body {
 
 /* Button */
 .ui-btn-primary {
+    position: relative;
     display: inline-block;
     padding: 12px 32px;
 
-    font-size: 15px;
+    font-size: 0.87rem;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
@@ -108,11 +109,32 @@ body {
     animation: 0.75s linear infinite loading-spinner;
     opacity: 0.7;
 } 
+
+.status-loading-spinner-single {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: inline-block;
+    width: 0.87rem;
+    height: 0.87rem;
+    line-height: 100%;
+    border: 2px solid currentcolor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: 0.75s linear infinite loading-spinner;
+    opacity: 0.7;
+}
 @keyframes loading-spinner {
     to { transform: rotate(360deg) 
     }
 }
 
+.ui-btn-content {
+    visibility: hidden;
+}
 
 .md-field {
     display: block;
