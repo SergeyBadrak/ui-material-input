@@ -96,12 +96,12 @@ body {
 .status-loading-spinner:after {
     content: '';
     position: absolute; 
-    right: 10px; 
+    right: 9px; 
     top: 0; 
     bottom: 0; 
-    margin: auto;
-    width: 0.9rem;
-    height: 0.9rem;
+    margin: auto 0;
+    width: 0.87rem;
+    height: 0.87rem;
     border: 2px solid currentcolor;
     border-right-color: transparent;
     border-radius: 50%;
@@ -110,7 +110,7 @@ body {
 } 
 @keyframes loading-spinner {
     to { transform: rotate(360deg) 
- }
+    }
 }
 
 
